@@ -1,0 +1,64 @@
+<div>
+    <h1>{{title}}</h1>
+    <h1>Arreglos</h1>
+    <ul>
+        <li *ngFor="let auto of autos">
+            {{auto}}
+        </li>
+        </ul>
+        
+    <li>{{users[0]}}</li>
+    <li>{{users[1]}}</li>
+</div>
+
+
+<div>  
+    <h1>Eventos</h1>
+    <h2>Seleccione Ciudad</h2>
+    <select #ciudades (change)="cambiar(ciudades.value)"  name="ciudades">
+        <option value="Guayaquil">Guayaquil</option>
+        <option value="Quito">Quito</option>
+        <option value="Cuenca">Cuenca</option>
+    </select>
+    <h2>Ciudad destino: {{title3}}</h2>
+    <input #ciudad type="text" name="ciudad">
+    <button (click)="presentar(ciudad.value)">Guardar</button>
+</div>
+
+<div>
+    <h1>TypeScript: Init constructor</h1>
+    <p>name: {{name}}</p>
+    <p>Calle: {{address.street}}</p>
+    <p>Ciudad: {{address.city}}</p>
+    <!-- Let y of deben ir por default -->
+    <ul><li *ngFor="let hobby of hobbies">  
+        {{hobby}}
+    </li></ul>
+</div>
+
+<div>
+    <h1>Botones</h1>
+    <ul>
+        <li *ngFor="let auto of autos">
+            {{auto}} <button (click)="sayHello()">Di Hola</button>
+        </li>
+        </ul>
+</div>
+
+<div>
+    <h1>Elimina Autos</h1>
+    <ul>
+        <li *ngFor="let auto of autos">
+            {{auto}} <button (click)="eliminaAutos(auto)">X</button>
+        </li>
+        </ul>
+</div>
+
+
+<div>
+    <h1>Formulario</h1>
+    <form (submit)="adicionarAuto(auto.value)" >
+        <input #auto type="text" name="auto">
+        <button>Enviar Auto</button>
+    </form>
+</div>
